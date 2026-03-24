@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Francisco Crime Analysis | Drug & Narcotic Trends</title>
+    <title>San Francisco Crime Analysis | The Narcotics Crisis</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-color: #0f111a;
-            --text-main: #e2e8f0;
+            --text-main: #f1f5f9;
             --text-dim: #94a3b8;
             --accent: #B196A9;
         }
@@ -27,51 +27,60 @@
             height: 100vh;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            text-align: center; background: radial-gradient(circle, #1a1c2e 0%, #0f111a 100%);
+            text-align: center;
+            background: radial-gradient(circle at center, #1e213a 0%, #0f111a 100%);
         }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 0; }
-        .subtitle { font-size: 1.5rem; color: var(--accent); font-weight: 300; margin-top: 10px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 5.5rem; margin: 0; letter-spacing: -2px; }
+        .subtitle { font-size: 1.6rem; color: var(--accent); font-weight: 300; margin-top: 15px; text-transform: uppercase; letter-spacing: 3px; }
 
-        .scrolly-container { display: flex; position: relative; }
+        .scrolly-container { display: flex; position: relative; flex-direction: row; }
 
+        /* Left Side: Sticky Visual */
         .sticky-visual {
             position: sticky; top: 0;
             width: 60%; height: 100vh;
             display: flex; align-items: center; justify-content: center;
+            padding: 20px;
         }
 
         iframe {
             width: 100%; height: 85%;
-            border: none; transition: opacity 0.4s ease;
+            border: none; transition: opacity 0.5s ease;
             background: transparent;
         }
 
+        /* Right Side: Narrative Text */
         .scroll-text { width: 40%; padding-right: 5%; }
 
         .step {
             min-height: 100vh;
             display: flex; flex-direction: column;
-            justify-content: center; padding: 40px;
-            opacity: 0.1; transition: opacity 0.6s ease;
+            justify-content: center; padding: 60px 40px;
+            opacity: 0.15; transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateX(20px);
         }
 
-        .step.active { opacity: 1; }
+        .step.active { opacity: 1; transform: translateX(0); }
 
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: white; margin-bottom: 1.5rem; }
-        p { font-size: 1.25rem; line-height: 1.8; color: var(--text-dim); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: white; margin-bottom: 1.5rem; line-height: 1.1; }
+        p { font-size: 1.3rem; line-height: 1.8; color: var(--text-dim); font-weight: 300; }
 
         .spacer { height: 40vh; }
 
-        footer { padding: 100px 20px; text-align: center; border-top: 1px solid #1e293b; }
+        footer {
+            padding: 120px 20px; text-align: center;
+            background: linear-gradient(to bottom, #0f111a, #07080d);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>City on the Edge</h1>
-        <div class="subtitle">Analyzing San Francisco's Drug & Narcotic Crisis (2003—2025)</div>
-        <p style="margin-top: 50px; color: #475569; letter-spacing: 2px;">SCROLL TO EXPLORE THE DATA ↓</p>
+        <div class="subtitle">Decoding San Francisco's Narcotics Data (2003—2025)</div>
+        <p style="margin-top: 60px; color: #475569; letter-spacing: 4px; font-size: 0.9rem;">SCROLL TO START THE CHAPTERS ↓</p>
     </header>
 
     <div class="scrolly-container">
@@ -82,18 +91,18 @@
         <div class="scroll-text">
             
             <div class="step active" data-plot="trend_peak.html">
-                <h2>The 2011 Surge</h2>
-                <p>Over a decade ago, San Francisco reached a critical threshold. Law enforcement recorded a massive peak in narcotics-related incidents, particularly in the Tenderloin district. The city was facing a wave of traditional drug offenses that defined a generation of crime data.</p>
+                <h2>The Historic Peak</h2>
+                <p>Long before the current crisis, San Francisco faced an earlier wave of narcotics crime. Using automated data analysis, we identified the historical peak. During this era, traditional drug offenses dominated the police logs, reflecting a city struggling with a different kind of street-level market.</p>
             </div>
 
             <div class="step" data-plot="trend_covid.html">
                 <h2>The Pandemic Silence</h2>
-                <p>As the world stood still in 2020, so did the streets of San Francisco. Reported incidents plummeted to historical lows. While the data suggests a city at rest, experts argue the markets merely moved indoors, hidden from the eyes of public records.</p>
+                <p>As the city enforced strict lockdowns in 2020 and 2021, reported crimes reached an unprecedented low. The streets were empty, and the markets appeared to vanish. However, this statistical dip didn't signal the end of the crisis—it only masked a shift in how and where these activities occurred.</p>
             </div>
 
             <div class="step" data-plot="trend_post_covid.html">
-                <h2>A Dangerous Resurgence</h2>
-                <p>The post-pandemic era has introduced a new, lethal dynamic. From 2022 to 2025, we observe a steady and alarming increase. With the emergence of synthetic opioids like Fentanyl, the city is not just returning to old patterns—it is facing an entirely new crisis.</p>
+                <h2>A Modern Resurgence</h2>
+                <p>Since 2022, the trend has reversed with alarming speed. The resurgence from 2022 to 2025 highlights a dangerous new reality. With the influx of synthetic opioids like Fentanyl, the data shows a city not just returning to old levels, but entering a more lethal phase of the crisis.</p>
             </div>
 
             <div class="spacer"></div>
@@ -101,8 +110,10 @@
     </div>
 
     <footer>
-        <h2 style="font-size: 2rem; margin-bottom: 20px;">Data Concludes...</h2>
-        <p style="max-width: 600px; margin: 0 auto; color: #94a3b8;">This analysis reveals that narcotics crime in San Francisco is not static. It reacts to global events, policy shifts, and the evolving nature of the substances themselves. Understanding this data is the first step toward finding a path forward.</p>
+        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Reflecting on the Data</h2>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; color: #94a3b8;">
+            By visualizing these shifts, we see that crime is never just a number. It is a reflection of a city's pulse, reacting to global pandemics, shifting policies, and the evolving nature of the crisis itself.
+        </p>
     </footer>
 
     <script>
