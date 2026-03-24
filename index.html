@@ -3,84 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Francisco Crime Analysis | The Narcotics Crisis</title>
-    
+    <title>SF Crime Analysis | Drug Trends</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    
     <style>
-        :root {
-            --bg-color: #0f111a;
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
-            --accent: #B196A9;
-        }
-
-        body, html {
-            margin: 0; padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            height: 100vh;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #1e213a 0%, #0f111a 100%);
-        }
-
-        h1 { font-family: 'Playfair Display', serif; font-size: 5.5rem; margin: 0; letter-spacing: -2px; }
-        .subtitle { font-size: 1.6rem; color: var(--accent); font-weight: 300; margin-top: 15px; text-transform: uppercase; letter-spacing: 3px; }
-
-        .scrolly-container { display: flex; position: relative; flex-direction: row; }
-
-        /* Left Side: Sticky Visual */
-        .sticky-visual {
-            position: sticky; top: 0;
-            width: 60%; height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            padding: 20px;
-        }
-
-        iframe {
-            width: 100%; height: 85%;
-            border: none; transition: opacity 0.5s ease;
-            background: transparent;
-        }
-
-        /* Right Side: Narrative Text */
+        :root { --bg-color: #0f111a; --text-main: #f1f5f9; --text-dim: #94a3b8; --accent: #B196A9; }
+        body, html { margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-main); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at center, #1e213a 0%, #0f111a 100%); }
+        h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 0; }
+        .subtitle { font-size: 1.5rem; color: var(--accent); letter-spacing: 3px; margin-top: 15px; }
+        .scrolly-container { display: flex; position: relative; }
+        .sticky-visual { position: sticky; top: 0; width: 60%; height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        iframe { width: 100%; height: 85%; border: none; transition: opacity 0.5s ease; background: transparent; }
         .scroll-text { width: 40%; padding-right: 5%; }
-
-        .step {
-            min-height: 100vh;
-            display: flex; flex-direction: column;
-            justify-content: center; padding: 60px 40px;
-            opacity: 0.15; transition: opacity 0.6s ease, transform 0.6s ease;
-            transform: translateX(20px);
-        }
-
-        .step.active { opacity: 1; transform: translateX(0); }
-
-        h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: white; margin-bottom: 1.5rem; line-height: 1.1; }
-        p { font-size: 1.3rem; line-height: 1.8; color: var(--text-dim); font-weight: 300; }
-
+        .step { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 40px; opacity: 0.15; transition: opacity 0.6s ease; }
+        .step.active { opacity: 1; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: white; margin-bottom: 1.5rem; }
+        p { font-size: 1.3rem; line-height: 1.8; color: var(--text-dim); }
         .spacer { height: 40vh; }
-
-        footer {
-            padding: 120px 20px; text-align: center;
-            background: linear-gradient(to bottom, #0f111a, #07080d);
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>City on the Edge</h1>
-        <div class="subtitle">Decoding San Francisco's Narcotics Data (2003—2025)</div>
-        <p style="margin-top: 60px; color: #475569; letter-spacing: 4px; font-size: 0.9rem;">SCROLL TO START THE CHAPTERS ↓</p>
+        <div class="subtitle">DECODING SF NARCOTICS DATA (2003—2025)</div>
+        <p style="margin-top: 60px; color: #475569;">SCROLL TO START THE STORY ↓</p>
     </header>
 
     <div class="scrolly-container">
@@ -89,55 +36,40 @@
         </div>
 
         <div class="scroll-text">
-            
             <div class="step active" data-plot="trend_peak.html">
-                <h2>The Historic Peak</h2>
-                <p>Long before the current crisis, San Francisco faced an earlier wave of narcotics crime. Using automated data analysis, we identified the historical peak. During this era, traditional drug offenses dominated the police logs, reflecting a city struggling with a different kind of street-level market.</p>
+                <h2>The Historical Peak</h2>
+                <p>In the late 2000s, San Francisco witnessed a significant surge in narcotics-related incidents. This era defined the baseline for drug crime in the city, with traditional enforcement and reporting reaching an all-time high in the years leading up to 2010.</p>
             </div>
 
             <div class="step" data-plot="trend_covid.html">
                 <h2>The Pandemic Silence</h2>
-                <p>As the city enforced strict lockdowns in 2020 and 2021, reported crimes reached an unprecedented low. The streets were empty, and the markets appeared to vanish. However, this statistical dip didn't signal the end of the crisis—it only masked a shift in how and where these activities occurred.</p>
+                <p>The global pandemic brought the city to a standstill. In 2021, reported incidents reached an unprecedented low. While the data suggests a decline, it likely masks a shift from public street-level activity to more secluded environments during the lockdowns.</p>
             </div>
 
             <div class="step" data-plot="trend_post_covid.html">
-                <h2>A Modern Resurgence</h2>
-                <p>Since 2022, the trend has reversed with alarming speed. The resurgence from 2022 to 2025 highlights a dangerous new reality. With the influx of synthetic opioids like Fentanyl, the data shows a city not just returning to old levels, but entering a more lethal phase of the crisis.</p>
+                <h2>A Dangerous Resurgence</h2>
+                <p>Since 2022, the trend has reversed with alarming speed. The resurgence observed from 2022 to 2025 indicates a new phase of the crisis. With synthetic opioids like Fentanyl entering the market, the city is facing its most lethal challenge in decades.</p>
             </div>
-
             <div class="spacer"></div>
         </div>
     </div>
 
-    <footer>
-        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Reflecting on the Data</h2>
-        <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; color: #94a3b8;">
-            By visualizing these shifts, we see that crime is never just a number. It is a reflection of a city's pulse, reacting to global pandemics, shifting policies, and the evolving nature of the crisis itself.
-        </p>
-    </footer>
-
     <script>
         const steps = document.querySelectorAll('.step');
         const iframe = document.getElementById('plot-iframe');
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     steps.forEach(s => s.classList.remove('active'));
                     entry.target.classList.add('active');
-
                     const newPlot = entry.target.getAttribute('data-plot');
                     if (iframe.getAttribute('src') !== newPlot) {
                         iframe.style.opacity = '0';
-                        setTimeout(() => {
-                            iframe.src = newPlot;
-                            iframe.style.opacity = '1';
-                        }, 300);
+                        setTimeout(() => { iframe.src = newPlot; iframe.style.opacity = '1'; }, 300);
                     }
                 }
             });
         }, { threshold: 0.6 });
-
         steps.forEach(step => observer.observe(step));
     </script>
 </body>
