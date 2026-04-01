@@ -20,6 +20,9 @@
         h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: white; margin-bottom: 1.5rem; }
         p { font-size: 1.3rem; line-height: 1.8; color: var(--text-dim); }
         .spacer { height: 40vh; }
+        .conclusion {height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(to bottom, #0f111a 0%, #1e213a 100%); padding: 0 15%; }
+        .conclusion h2 {font-size: 4rem; margin-bottom: 20px; }
+        .conclusion p {max-width: 800px;}
     </style>
 </head>
 <body>
@@ -58,15 +61,33 @@
 
             <div class="step" data-plot="drug_ratio_map_full.html">
                 <h2>Mapping the Crisis</h2>
-                <p>Beyond the timeline, the crisis is not evenly distributed across the city. By looking at the <i>ratio</i> of drug-related incidents, we can see how certain police districts carry a significantly higher burden than others. While San Francisco is a mosaic of neighborhoods, the data highlights a stark geographic concentration.</p>
+                <p>Beyond the timeline, the crisis is not evenly distributed across the city. By looking at the <i>ratio</i> of drug-related incidents, we can see how certain police districts carry a significantly higher burden than others. While San Francisco is a mosaic of neighborhoods, the data highlights a distinct geographic concentration.</p>
             </div>
 
             <div class="step" data-plot="drug_ratio_map_tenderloin.html">
                 <h2>The Epicenter: Tenderloin</h2>
-                <p>Zooming in, the <b>Tenderloin district</b> stands out as the historical and current epicenter. The yellow glow on the map isn't just data—it represents the intense concentration of open-air drug markets and enforcement. This district consistently reports a ratio far beyond any other area, making it the focal point of SF's drug policy debate.</p>
+                <p>Zooming in, the <b>Tenderloin district</b> stands out as the historical and current epicenter. The yellow glow on the map isn't just data — it represents the intense concentration of open-air drug markets and enforcement. This district consistently reports a ratio far beyond any other area, making it the focal point of SF's drug policy debate.</p>
+            </div>
+
+            <div class="step" data-plot="radar_all.html">
+                <h2>The Crime Fingerprint</h2>
+                <p>Every district has a unique "crime DNA." Historically, <b>Larceny Theft</b> is the dominant category across San Francisco. But look at the shapes — some districts are more "balanced" than others.</p>
+            </div>
+
+            <div class="step" data-plot="radar_focus.html">
+                <h2>The impact of drug crimes in Tenderloin</h2>
+                <p>When comparing the <b>Tenderloin</b> to the <b>Mission</b>, the difference is striking. While Larceny Theft is 7 times more common than drug crimes city-wide, in Tenderloin, they are almost neck-and-neck. This DNA has remained consistent for over two decades.</p>
             </div>
         </div>
     </div>
+
+    <section class="conclusion">
+    <h2>To Conclude</h2>
+    <p>From the peak of 2008 to the post-pandemic increase, San Francisco's drug landscape is constantly shifting. While the city moves toward new models of care and enforcement, the data tells a story of deep geographic concentration. The streets of the Tenderloin district remain the epicenter of a crisis that is as much about location as it is about law.</p>
+    <div class="subtitle" style="margin-top: 50px; font-size: 1rem; opacity: 0.5;">
+        Analysis by [Rakel Zander Ebdrup & Frida Schledermann]
+    </div>
+    </section>
 
     <script>
         const steps = document.querySelectorAll('.step');
